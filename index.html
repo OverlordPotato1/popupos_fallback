@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PopupOS</title>
+  <style>
+    :root {
+      --background: #0a0a0a;
+      --foreground: #ededed;
+    }
+
+    html,
+    body {
+      max-width: 100vw;
+      overflow-x: hidden;
+    }
+
+    body {
+      color: var(--foreground);
+      background: var(--background);
+      font-family: Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      html {
+        color-scheme: dark;
+      }
+    }
+
+    .main-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      gap: 5rem;
+    }
+
+    .error-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .troubleshooting-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    h1 {
+      font-size: 4rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+    }
+
+    .code-block {
+      background: #1e1e1e;
+      padding: 0.5rem;
+      border-radius: 5px;
+      overflow-x: auto;
+      font-family: monospace;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      font-size: 1.1rem;
+      gap: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="main-container">
+    <div class="error-container">
+      <h1>PopupOS</h1>
+      <p>Payload missing from directory. Bootup cannot proceed.</p>
+    </div>
+    <div class="divider"></div>
+    <div class="troubleshooting-container">
+      <h2>Troubleshooting</h2>
+      <p>Try the following:</p>
+      <ul>
+        <li>Verify the presence of <span class="code-block">boot-payload.txt</span> under <span class="code-block">/</span></li>
+        <li>Reinstall the operating system.</li>
+        <li>Redownload installation image</li>
+      </ul>
+    </div>
+    <span class="footer">PopupOS %POS_VERSION% (%BUILD_MONTH% %BUILD_YEAR%)</span>
+  </div>
+</body>
+</html>
+
